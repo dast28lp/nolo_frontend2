@@ -11,8 +11,8 @@ function Navbar() {
     <div>
       <nav>
         <ul>
-          {menuItems.map((item) => (
-            <li>
+          {menuItems.map((item,idx) => (
+            <li key={idx}>
               <a href="hola">{item}</a>
             </li>
           ))}
