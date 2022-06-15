@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Card from "../Card/Card";
+import Row from "../Row/Row";
+
 
 export default function Services() {
   const [serviceList, setServiceList] = useState([]);
-
-  const services = ["tarjeta de crédito", "CDT"];
 
   useEffect(() => {
     console.log(`pintando componente servicios`);
@@ -19,15 +18,18 @@ export default function Services() {
   };
 
   return (
-    <div>
-      <h2>Mis servicios</h2>
-      <ul>
-        {serviceList.map((item, perro) => (
-          <li key={perro}>
-            <Card image={item.image} title={item.name} description={item.description} />
-          </li>
-        ))}
-      </ul>
+    <div id="about" className="about">
+    <div className="container">
+       <div className="row">
+          <div className="col-md-12">
+             <div className="titlepage">
+                <h2>Servicios</h2>
+                <p>Conoce nuestros principales servicios diseñados y pensados para nuestros clientes </p>
+             </div>
+          </div>
+       </div>
+        <Row data={serviceList}/>
     </div>
+ </div>
   );
 }
